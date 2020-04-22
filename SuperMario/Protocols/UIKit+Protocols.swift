@@ -14,4 +14,6 @@ protocol ReuseIdentifier {
 
 protocol Cell {
     var rowModel: RowModel! { get set }
+    var characterPreViewAction: ((RowModel) -> Void)? { get set }
+    var webSearchAction: ((RowModel) -> Void)? { get set }
 }

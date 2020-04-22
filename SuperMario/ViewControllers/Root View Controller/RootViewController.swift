@@ -8,20 +8,22 @@
 
 import UIKit
 
-enum RootViewState {
-    case limitedConnection
-    case loading
-    case render
+enum SubSceneDestination {
+    enum SubScene {
+        case characterPreview(String)
+        case webSearch(String)
+    }
+    case none
+    case render(SubScene)
 }
 
-class RootViewController: BaseViewController {
+class RootViewController: BaseTableViewController {
     
-    typealias StateType = RootViewState
     typealias DataSource = UITableViewDiffableDataSource<Section, RowModel>
     
     let viewModel = RootViewModel()
     
-    var state: StateType = .loading
+    var state: SubSceneDestination = .none
     
     var dataSource: DataSource! = nil
     
@@ -46,12 +48,22 @@ class RootViewController: BaseViewController {
 
 extension RootViewController: Transitionable {
     
-    func push(to newState: RootViewState) {
+    func push(to newState: SubSceneDestination) {
+        self.state = newState
         
-    }
-    
-    func display(to newState: RootViewState) {
+        if case .render(.characterPreview(let imageUrl)) = self.state {
+            let url = URL(string: imageUrl)
+            let vc = ImageViewViewController()
+            vc.imageUrl = url
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
+        if case .render(.webSearch(let key)) = self.state {
+            let vc = SeriesDecriptionViewController()
+            vc.searchKey = key
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func dismiss() {

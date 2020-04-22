@@ -11,31 +11,40 @@ import Combine
 
 class RootViewModel: ViewModel {
     
-    weak var _screen: UIViewController?
+    weak var _screen: RootViewController?
     
     var selectedItemSubject: PassthroughSubject<Selection, Never>?
     
     var store = Set<AnyCancellable>()
     
-    var screen: UIViewController? {
+    var screen: RootViewController? {
         return _screen
     }
     
     var dataSource: UITableViewDiffableDataSource<Section, RowModel>!
     
     func dataSource(tableView: UITableView) -> UITableViewDiffableDataSource<Section, RowModel> {
-        dataSource = UITableViewDiffableDataSource<Section, RowModel>(tableView: tableView, cellProvider: { (tableView, indexpath, item) -> UITableViewCell? in
+        dataSource = UITableViewDiffableDataSource<Section, RowModel>(tableView: tableView, cellProvider: { [weak self] (tableView, indexpath, item) -> UITableViewCell? in
                    let cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier, for: indexpath)
+            
                    cell.model = item
-
+            
+                    cell.previewAction = { model in
+                        self?.screen?.push(to: .render(.characterPreview(model.image)))
+                    }
+                    
+                    cell.searchAction = { model in
+                        self?.screen?.push(to: .render(.webSearch(item.series)))
+                    }
+            
                    return cell
                })
         dataSource.defaultRowAnimation = .none
         return dataSource
     }
     
-    func setScreen(screen: UIViewController) {
-        self._screen = screen
+    func setScreen<T>(screen: T) {
+        self._screen = (screen as! RootViewController)
     }
     
     init(){}

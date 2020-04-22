@@ -14,7 +14,7 @@ enum Section: CaseIterable {
     case secondary
 }
 
-class BaseViewController: UITableViewController {
+class BaseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

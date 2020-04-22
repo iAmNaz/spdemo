@@ -16,46 +16,29 @@ class CharacterTableViewCell: UITableViewCell, NibReusable, Cell {
     @IBOutlet weak var seriesLabel: UILabel!
     @IBOutlet weak var characterImageView: UIImageView!
     
+    var characterPreViewAction: ((RowModel) -> Void)?
+    var webSearchAction: ((RowModel) -> Void)?
+    
     var rowModel: RowModel! {
         didSet {
-            self.seriesLabel.text = rowModel.series
-            self.nameLabel.text = rowModel.name
+            self.nameLabel.text = "Name: " + rowModel.name
+            self.seriesLabel.text = "Series: " + rowModel.series
             self.processImage()
         }
     }
     
     @IBAction func characterButtonAction(_ sender: Any) {
-        
+        self.characterPreViewAction?(rowModel)
     }
     
     @IBAction func searchButtonAction(_ sender: Any) {
-        
+        self.webSearchAction?(rowModel)
     }
     
     func processImage() {
-        let url = URL(string: self.rowModel.image)
+        let url = URL(string: self.rowModel.image)!
         
-        let processor = DownsamplingImageProcessor(size: characterImageView.bounds.size)
-                    
-        characterImageView.kf.indicatorType = .activity
-        characterImageView.kf.setImage(
-            with: url,
-            placeholder: UIImage(named: "mario"),
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
-        {
-            result in
-            switch result {
-            case .success(let value):
-                print("Task done for: \(value.source.url?.absoluteString ?? "")")
-            case .failure(let error):
-                print("Job failed: \(error.localizedDescription)")
-            }
-        }
+        characterImageView.loadImage(from: url)
     }
     
     override func awakeFromNib() {

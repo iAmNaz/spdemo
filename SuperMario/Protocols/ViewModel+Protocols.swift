@@ -22,5 +22,5 @@ struct Selection {
 protocol ViewModel {
     var selectedItemSubject: PassthroughSubject<Selection, Never>? { get set }
     func dataSource(tableView: UITableView) -> UITableViewDiffableDataSource<Section, RowModel>
-    func setScreen(screen: UIViewController)
+    func setScreen<T>(screen: T)
 }

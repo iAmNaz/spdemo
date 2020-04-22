@@ -11,8 +11,6 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-//39, 50, 56
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         customAppearance()
@@ -36,10 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func customAppearance() {
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithOpaqueBackground()
-        coloredAppearance.backgroundColor = UIColor(red: 39/255.0, green: 50/255.0, blue: 56/255.0, alpha: 1.0)
+        coloredAppearance.backgroundColor = UIColor(named: "Turqoise")
         coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-               
+        UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().standardAppearance = coloredAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
     }

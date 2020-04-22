@@ -19,33 +19,36 @@ extension UITableViewCell {
             row.rowModel = newValue
         }
     }
+    
+    var previewAction: ((RowModel) -> Void)? {
+        get {
+            return (self as! Cell).characterPreViewAction
+        }
+        set {
+            var row = (self as! Cell)
+            row.characterPreViewAction = newValue
+        }
+    }
+    
+    var searchAction: ((RowModel) -> Void)? {
+        get {
+            return (self as! Cell).webSearchAction
+        }
+        set {
+            var row = (self as! Cell)
+            row.webSearchAction = newValue
+        }
+    }
 }
 
 protocol Transitionable:class {
-    associatedtype StateType
-    func push(to newState: StateType)
-    func display(to newState: StateType)
+    associatedtype Destination
+    func push(to newState: Destination)
     func showAlert(title: String, message: String, completionHandler: ((String?)->Void)?)
     func dismiss()
 }
 
-extension UIViewController {
-    func add(_ child: UIViewController) {
-        addChild(child)
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
-    }
-
-    func remove() {
-        guard parent != nil else {
-            return
-        }
-
-        willMove(toParent: nil)
-        view.removeFromSuperview()
-        removeFromParent()
-    }
-    
+extension UIViewController {    
     func showAlert(title: String, message: String, completionHandler: ((String?)->Void)?) {
         
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -67,5 +70,59 @@ extension UIViewController {
     
     func hideProgressIndicator(title: String) {
         self.title = title
+    }
+    
+    func addView(childView: UIView, constraint: ConstraintValues) {
+        
+        view.addSubview(childView)
+    
+        childView.translatesAutoresizingMaskIntoConstraints = false
+        
+        var constraints = [
+            childView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: constraint.top),
+            childView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: constraint.right),
+            childView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: constraint.left)
+        ]
+        
+        if let bottom = constraint.bottom {
+            constraints.append(childView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: bottom))
+        }
+        
+        if let height = constraint.height {
+            constraints.append(childView.heightAnchor.constraint(equalToConstant: height))
+        }
+        
+        if let width = constraint.width {
+            constraints.append(childView.widthAnchor.constraint(equalToConstant: width))
+        }
+        
+        [constraints]
+        .forEach(NSLayoutConstraint.activate(_:))
+    }
+}
+
+import Kingfisher
+
+extension UIImageView {
+    func loadImage(from url: URL) {
+                 
+        self.kf.indicatorType = .activity
+        self.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: "mario"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        {
+            result in
+            switch result {
+            case .success(let value):
+                print("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                print("Job failed: \(error.localizedDescription)")
+            }
+        }
     }
 }

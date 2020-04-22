@@ -12,6 +12,7 @@ import UIKit
  The endpoint helps in building a complete url for a request
  */
 struct Endpoint {
+    let base: URL
     let path: String
     var queryItems: [URLQueryItem]
 }
@@ -20,6 +21,7 @@ struct Endpoint {
 extension Endpoint {
     static var root: Endpoint {
         return Endpoint(
+            base: BASEURL!,
             path: "/api/amiibo",
             queryItems: []
         )
@@ -30,9 +32,9 @@ extension Endpoint {
 extension Endpoint {
     var url: URL? {
         var components = URLComponents()
-        components.scheme = BASEURL!.scheme
-        components.host = BASEURL!.host
-        components.port = BASEURL!.port
+        components.scheme = base.scheme
+        components.host = base.host
+        components.port = base.port
         components.path = path
         components.queryItems = queryItems
 
