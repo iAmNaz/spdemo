@@ -35,10 +35,11 @@
 		454C5701244FFB5000BAA651 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C5700244FFB5000BAA651 /* Foundation+Extensions.swift */; };
 		454C57032450092C00BAA651 /* Alamofire+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C57022450092C00BAA651 /* Alamofire+Extensions.swift */; };
 		454C570524500A9300BAA651 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C570424500A9300BAA651 /* Series.swift */; };
-		45A79FDA2450684B006A5F38 /* ImageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A79FD92450684B006A5F38 /* ImageViewViewController.swift */; };
+		45A79FDA2450684B006A5F38 /* FullImageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A79FD92450684B006A5F38 /* FullImageViewViewController.swift */; };
 		45A79FDC24506874006A5F38 /* SeriesDecriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A79FDB24506874006A5F38 /* SeriesDecriptionViewController.swift */; };
 		45A79FDE245068EE006A5F38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A79FDD245068EE006A5F38 /* BaseViewController.swift */; };
 		45A79FE22450777C006A5F38 /* ConstraintValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A79FE12450777C006A5F38 /* ConstraintValues.swift */; };
+		45A79FE424507E6B006A5F38 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A79FE324507E6B006A5F38 /* BaseNavigationViewController.swift */; };
 		558CD76AC26C820B9181BD2D /* Pods_SuperMario.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EF08D21D93DC3D1E21B381 /* Pods_SuperMario.framework */; };
 		6BABC4ED9B8738799BE13C9F /* Pods_SuperMarioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350C09E120CE665CDC918127 /* Pods_SuperMarioTests.framework */; };
 		7D557C9F89134BFA37047CB2 /* Pods_SuperMario_SuperMarioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A137C8D572B9F92BEA1D6140 /* Pods_SuperMario_SuperMarioUITests.framework */; };
@@ -99,10 +100,11 @@
 		454C5700244FFB5000BAA651 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		454C57022450092C00BAA651 /* Alamofire+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extensions.swift"; sourceTree = "<group>"; };
 		454C570424500A9300BAA651 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
-		45A79FD92450684B006A5F38 /* ImageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewViewController.swift; sourceTree = "<group>"; };
+		45A79FD92450684B006A5F38 /* FullImageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewViewController.swift; sourceTree = "<group>"; };
 		45A79FDB24506874006A5F38 /* SeriesDecriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDecriptionViewController.swift; sourceTree = "<group>"; };
 		45A79FDD245068EE006A5F38 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		45A79FE12450777C006A5F38 /* ConstraintValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintValues.swift; sourceTree = "<group>"; };
+		45A79FE324507E6B006A5F38 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		45EF08D21D93DC3D1E21B381 /* Pods_SuperMario.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMario.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		504FCFC18699A272599FF580 /* Pods-SuperMario-SuperMarioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMario-SuperMarioUITests.release.xcconfig"; path = "Target Support Files/Pods-SuperMario-SuperMarioUITests/Pods-SuperMario-SuperMarioUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7FEDB39CEA835858BB787360 /* Pods-SuperMario-SuperMarioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMario-SuperMarioUITests.debug.xcconfig"; path = "Target Support Files/Pods-SuperMario-SuperMarioUITests/Pods-SuperMario-SuperMarioUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				454C56B9244FE25F00BAA651 /* BaseTableViewController.swift */,
+				45A79FE324507E6B006A5F38 /* BaseNavigationViewController.swift */,
 				45A79FDD245068EE006A5F38 /* BaseViewController.swift */,
 			);
 			path = BaseClasses;
@@ -242,9 +245,9 @@
 		454C56C1244FE32E00BAA651 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				45A79FD824506829006A5F38 /* Root View Controller */,
-				45A79FD92450684B006A5F38 /* ImageViewViewController.swift */,
-				45A79FDB24506874006A5F38 /* SeriesDecriptionViewController.swift */,
+				45A79FD824506829006A5F38 /* Root View  */,
+				45A79FE524507EB4006A5F38 /* Full Image View */,
+				45A79FE624507F09006A5F38 /* Series Description View */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -335,13 +338,29 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
-		45A79FD824506829006A5F38 /* Root View Controller */ = {
+		45A79FD824506829006A5F38 /* Root View  */ = {
 			isa = PBXGroup;
 			children = (
 				454C568D244FE13400BAA651 /* RootViewController.swift */,
 				454C56D0244FF55D00BAA651 /* RootViewModel.swift */,
 			);
-			path = "Root View Controller";
+			path = "Root View ";
+			sourceTree = "<group>";
+		};
+		45A79FE524507EB4006A5F38 /* Full Image View */ = {
+			isa = PBXGroup;
+			children = (
+				45A79FD92450684B006A5F38 /* FullImageViewViewController.swift */,
+			);
+			path = "Full Image View";
+			sourceTree = "<group>";
+		};
+		45A79FE624507F09006A5F38 /* Series Description View */ = {
+			isa = PBXGroup;
+			children = (
+				45A79FDB24506874006A5F38 /* SeriesDecriptionViewController.swift */,
+			);
+			path = "Series Description View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,7 +607,7 @@
 				454C56E7244FF6D200BAA651 /* GameListingRequests.swift in Sources */,
 				454C56EA244FF6D200BAA651 /* Resource.swift in Sources */,
 				454C56BA244FE25F00BAA651 /* BaseTableViewController.swift in Sources */,
-				45A79FDA2450684B006A5F38 /* ImageViewViewController.swift in Sources */,
+				45A79FDA2450684B006A5F38 /* FullImageViewViewController.swift in Sources */,
 				454C56C5244FF22C00BAA651 /* ViewModel+Protocols.swift in Sources */,
 				454C56F9244FF6D200BAA651 /* EndPoint.swift in Sources */,
 				454C56C7244FF30300BAA651 /* RowModel.swift in Sources */,
@@ -602,6 +621,7 @@
 				454C5701244FFB5000BAA651 /* Foundation+Extensions.swift in Sources */,
 				45A79FDC24506874006A5F38 /* SeriesDecriptionViewController.swift in Sources */,
 				454C57032450092C00BAA651 /* Alamofire+Extensions.swift in Sources */,
+				45A79FE424507E6B006A5F38 /* BaseNavigationViewController.swift in Sources */,
 				454C56FF244FF9FD00BAA651 /* Config.swift in Sources */,
 				454C568A244FE13400BAA651 /* AppDelegate.swift in Sources */,
 				454C56C9244FF32E00BAA651 /* UIKit+Protocols.swift in Sources */,
@@ -778,6 +798,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22QJGKKNX4;
 				INFOPLIST_FILE = SuperMario/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -785,7 +806,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.naz.-.SuperMario";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -797,6 +818,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22QJGKKNX4;
 				INFOPLIST_FILE = SuperMario/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -804,7 +826,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.naz.-.SuperMario";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

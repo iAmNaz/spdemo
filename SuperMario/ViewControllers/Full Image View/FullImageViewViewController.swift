@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class ImageViewViewController: BaseViewController {
+class FullImageViewViewController: BaseViewController {
     
     fileprivate var imageView = UIImageView(frame: .zero)
     var imageUrl: URL!

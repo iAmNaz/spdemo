@@ -53,7 +53,7 @@ extension RootViewController: Transitionable {
         
         if case .render(.characterPreview(let imageUrl)) = self.state {
             let url = URL(string: imageUrl)
-            let vc = ImageViewViewController()
+            let vc = FullImageViewViewController()
             vc.imageUrl = url
             
             self.navigationController?.pushViewController(vc, animated: true)

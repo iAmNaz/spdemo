@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
                
-               let root = UINavigationController(rootViewController: RootViewController())
+               let root = BaseNavigationViewController(rootViewController: RootViewController())
                
                let window = UIWindow(windowScene: windowScene)
                window.rootViewController = root

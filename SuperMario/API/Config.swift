@@ -8,4 +8,4 @@
 
 import Foundation
 
-let BASEURL = URL(string: "http://localhost:3000/api")
+let BASEURL = URL(string: "http://192.168.254.101:3000/api")
