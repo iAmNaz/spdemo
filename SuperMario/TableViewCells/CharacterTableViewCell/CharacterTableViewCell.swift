@@ -52,5 +52,4 @@ class CharacterTableViewCell: UITableViewCell, NibReusable, Cell {
 
         // Configure the view for the selected state
     }
-    
 }

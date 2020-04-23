@@ -20,14 +20,14 @@ class RootViewModel {
     fileprivate weak var _screen: RootViewController?
 
     fileprivate var store = Set<AnyCancellable>()
+        
+    fileprivate var dataSource: UITableViewDiffableDataSource<Section, RowModel>!
+    
+    fileprivate var request: GameListing!
     
     fileprivate var screen: RootViewController? {
         return _screen
     }
-    
-    fileprivate var dataSource: UITableViewDiffableDataSource<Section, RowModel>!
-    
-    fileprivate var request: GameListing!
     
     init() {
         request = GameListingRequests()
