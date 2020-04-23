@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ The data model representing the series document
+ */
 struct Series: Codable {
     var name: String
     var gameSeries: String

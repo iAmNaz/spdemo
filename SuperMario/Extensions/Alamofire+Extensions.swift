@@ -9,6 +9,7 @@
 import Alamofire
 
 extension Session {
+    /// A custom method to pass the request components
     func request(_ resource: Resource, body: Body, method: HTTPMethod = .get) -> DataRequest {
         let headers: HTTPHeaders = [
             "Content-Type": "application/json"

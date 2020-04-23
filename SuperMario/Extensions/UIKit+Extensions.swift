@@ -42,8 +42,9 @@ extension UITableViewCell {
 }
 
 protocol Transitionable:class {
-    associatedtype Destination
-    func push(to newState: Destination)
+    associatedtype State
+    func push(to newState: State)
+    func display(to newState: State)
     func showAlert(title: String, message: String, completionHandler: ((String?)->Void)?)
     func dismiss()
 }
@@ -104,6 +105,12 @@ extension UIViewController {
 import Kingfisher
 
 extension UIImageView {
+    /// Asynchronously load remote images using this method.
+    /// When invoked it will initially display a given placeholder image and activity indicator.
+    /// When the image loads the placeholder will be replaced with the remote image and
+    /// the activity indicator will be hidden.
+    /// 
+    /// - Parameter url: The url of an image
     func loadImage(from url: URL) {
                  
         self.kf.indicatorType = .activity

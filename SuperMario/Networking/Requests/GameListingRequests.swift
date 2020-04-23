@@ -10,17 +10,23 @@ import Foundation
 import Combine
 import os
 
+/**
+ A concrete type made specifically for the Series collection
+ */
 struct GameListingRequests {
 
-    mutating func fetchGames() -> AnyPublisher<[Series], APIError> {
+    /// A get request of all Game Series
+    mutating func fetchSeries() -> AnyPublisher<[Series], APIError> {
         let resource = Resource(url: Endpoint.root.url!)
         let client = APIClient<GameListResult>()
         
         os_log("Fetching series - %{PRIVATE}@", log: apiLog, type: .info, resource.url.absoluteString)
         
-        return client.loadDecodable(resource, body: Body(route: .getGames))
+        return client.loadDecodable(resource, body: Body(route: .getSeries))
             .receive(on: DispatchQueue.main)
             .map { return $0.series }
             .eraseToAnyPublisher()
     }
+    
+    
 }

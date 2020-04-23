@@ -14,6 +14,7 @@ enum SubSceneDestination {
         case webSearch(String)
     }
     case none
+    case noConnection
     case render(SubScene)
 }
 
@@ -32,9 +33,7 @@ class RootViewController: BaseTableViewController {
         tableView.register(cellType: CharacterTableViewCell.self)
         configureTableView()
         dataSource = self.viewModel.dataSource(tableView: self.tableView)
-        var snapshot = dataSource.snapshot()
-        snapshot.appendSections([.primary])
-        dataSource.apply(snapshot)
+
         viewModel.setScreen(screen: self)
         viewModel.loadRemote()
     }
@@ -47,8 +46,17 @@ class RootViewController: BaseTableViewController {
 }
 
 extension RootViewController: Transitionable {
+    func display(to newState: SubSceneDestination) {
+        self.state = newState
+        
+        if case .noConnection = self.state {
+            self.title = "Offline"
+        }
+    }
+    
     
     func push(to newState: SubSceneDestination) {
+        
         self.state = newState
         
         if case .render(.characterPreview(let imageUrl)) = self.state {
@@ -65,6 +73,7 @@ extension RootViewController: Transitionable {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
     
     func dismiss() {
         

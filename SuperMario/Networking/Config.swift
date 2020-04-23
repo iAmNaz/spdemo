@@ -8,4 +8,5 @@
 
 import Foundation
 
+/// The base url of the service
 let BASEURL = URL(string: "http://192.168.254.101:3000/api")

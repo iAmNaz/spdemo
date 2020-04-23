@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+/**
+ A logging subclass provided by Alamofire
+ */
 final class APILogger: EventMonitor {
     let queue = DispatchQueue(label: "api-logging")
     

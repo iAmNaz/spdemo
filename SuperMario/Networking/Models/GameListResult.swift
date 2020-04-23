@@ -7,7 +7,12 @@
 //
 
 import Foundation
+
+/**
+ This codable type represent the json response from the 'amiibo' end point
+ */
 struct GameListResult: Codable {
+    
     var series: [Series]
     
     enum CodingKeys: String, CodingKey {

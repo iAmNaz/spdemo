@@ -26,7 +26,6 @@
 		454C56E7244FF6D200BAA651 /* GameListingRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56D3244FF6D200BAA651 /* GameListingRequests.swift */; };
 		454C56E9244FF6D200BAA651 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56D5244FF6D200BAA651 /* APIClient.swift */; };
 		454C56EA244FF6D200BAA651 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56D6244FF6D200BAA651 /* Resource.swift */; };
-		454C56EB244FF6D200BAA651 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56D7244FF6D200BAA651 /* Response.swift */; };
 		454C56EC244FF6D200BAA651 /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56D8244FF6D200BAA651 /* APILogger.swift */; };
 		454C56F8244FF6D200BAA651 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56E5244FF6D200BAA651 /* Body.swift */; };
 		454C56F9244FF6D200BAA651 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56E6244FF6D200BAA651 /* EndPoint.swift */; };
@@ -91,7 +90,6 @@
 		454C56D3244FF6D200BAA651 /* GameListingRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListingRequests.swift; sourceTree = "<group>"; };
 		454C56D5244FF6D200BAA651 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		454C56D6244FF6D200BAA651 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
-		454C56D7244FF6D200BAA651 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		454C56D8244FF6D200BAA651 /* APILogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
 		454C56E5244FF6D200BAA651 /* Body.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		454C56E6244FF6D200BAA651 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -189,7 +187,7 @@
 		454C5688244FE13400BAA651 /* SuperMario */ = {
 			isa = PBXGroup;
 			children = (
-				454C56D2244FF6D200BAA651 /* API */,
+				454C56D2244FF6D200BAA651 /* Networking */,
 				454C56CA244FF3D900BAA651 /* Extensions */,
 				454C56C3244FF20200BAA651 /* Protocols */,
 				454C56C2244FE33800BAA651 /* AppDelegate */,
@@ -289,7 +287,7 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
-		454C56D2244FF6D200BAA651 /* API */ = {
+		454C56D2244FF6D200BAA651 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				454C56D9244FF6D200BAA651 /* Models */,
@@ -298,7 +296,7 @@
 				454C570624500C8400BAA651 /* Components */,
 				454C56FE244FF9FD00BAA651 /* Config.swift */,
 			);
-			path = API;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		454C56D9244FF6D200BAA651 /* Models */ = {
@@ -324,7 +322,6 @@
 			children = (
 				454C56D5244FF6D200BAA651 /* APIClient.swift */,
 				454C56D6244FF6D200BAA651 /* Resource.swift */,
-				454C56D7244FF6D200BAA651 /* Response.swift */,
 				454C56D8244FF6D200BAA651 /* APILogger.swift */,
 			);
 			path = Client;
@@ -612,7 +609,6 @@
 				454C56F9244FF6D200BAA651 /* EndPoint.swift in Sources */,
 				454C56C7244FF30300BAA651 /* RowModel.swift in Sources */,
 				454C56F8244FF6D200BAA651 /* Body.swift in Sources */,
-				454C56EB244FF6D200BAA651 /* Response.swift in Sources */,
 				454C56BD244FE30D00BAA651 /* CharacterTableViewCell.swift in Sources */,
 				454C56CC244FF3E700BAA651 /* UIKit+Extensions.swift in Sources */,
 				45A79FDE245068EE006A5F38 /* BaseViewController.swift in Sources */,

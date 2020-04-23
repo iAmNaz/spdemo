@@ -8,16 +8,18 @@
 
 import Foundation
 /**
- Body parameters
+ The type for the request body parameters
  */
 public struct Body {
 
+    /// Here you will define static / predefined parameters for a given resource or request
     enum Route {
-        case getGames
+        
+        case getSeries
         
         func preset() -> [String: Any] {
             switch self {
-            case .getGames:
+            case .getSeries:
                 return [:]
             }
         }
@@ -25,6 +27,10 @@ public struct Body {
     
     private(set) var data: [String: Any] = [:]
     
+    /// Using this initializer you can select a predefined body parameter and
+    /// append additional arbitrary parameters to your requests
+    /// - Parameter route: An enum of predefined parameters
+    /// - Parameter extras: For parameters that are generated dynamically depending on the use case.
     init(route: Route, extras: [String: Any]? = nil) {
         self.data.merge(route.preset())  { (current, _) in current }
         guard let copy = extras else {

@@ -3,18 +3,30 @@ import Combine
 import Alamofire
 import os
 
+/// The logging category for the API module
 let apiLog = OSLog(subsystem: "com.naz.SuperMario", category: "api")
 
+/// Only log when on debuggin mode, i.e. when running via a simulator or test device
 #if DEBUG
-var AFSession = Session(eventMonitors: [APILogger()])
+    var AFSession = Session(eventMonitors: [APILogger()])
 #else
-var AFSession = Session()
+    var AFSession = Session()
 #endif
 
+/*
+ A generic networking interface
+ */
 final class APIClient<T:Decodable> {
     
     init() {}
 
+    /// A method for fetching data that returns encoded objects
+    ///
+    /// Use this method when the endpoint returns a valid json formatted response
+    /// and encode them to a `Codable` data model
+    ///  - Parameter resource: The `Resource` object which has the url and http method
+    ///  - Parameter body: The `Body`parameters
+    ///  - Returns: A `Future` result of type T or an `APIError`
     func loadDecodable(_ resource: Resource, body: Body) -> Future<T, APIError> {
         return Future { promise in
             

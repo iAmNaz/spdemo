@@ -39,6 +39,7 @@ class RootViewModel: ViewModel {
             
                    return cell
                })
+        
         dataSource.defaultRowAnimation = .none
         return dataSource
     }
@@ -47,14 +48,16 @@ class RootViewModel: ViewModel {
         self._screen = (screen as! RootViewController)
     }
     
-    init(){}
+    init(){
+        
+    }
     
     func loadRemote() {
         self.screen?.showProgressIndicator()
         
         var request = GameListingRequests()
         
-        request.fetchGames()
+        request.fetchSeries()
             .map {
                 return $0.map {
                     return RowModel(name: $0.name, series: $0.gameSeries, image: $0.image, cellId: CharacterTableViewCell.self)
@@ -73,7 +76,7 @@ class RootViewModel: ViewModel {
             guard var snapshot = self?.dataSource.snapshot() else {
                 return
             }
-            
+            snapshot.appendSections([.primary])
             snapshot.appendItems(models, toSection: .primary)
                 
             self?.dataSource.apply(snapshot, animatingDifferences: false)

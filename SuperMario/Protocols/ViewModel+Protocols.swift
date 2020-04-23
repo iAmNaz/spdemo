@@ -8,6 +8,7 @@
 
 import UIKit
 import Combine
+import Alamofire
 
 enum ActionType {
     case character
