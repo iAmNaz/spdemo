@@ -15,7 +15,7 @@ enum Section: CaseIterable {
     case secondary
 }
 
-class RootViewModel: ViewModel {
+class RootViewModel {
     
     fileprivate weak var _screen: RootViewController?
 
@@ -27,6 +27,32 @@ class RootViewModel: ViewModel {
     
     fileprivate var dataSource: UITableViewDiffableDataSource<Section, RowModel>!
     
+    fileprivate var request: GameListing!
+    
+    init() {
+        request = GameListingRequests()
+    }
+    
+    init(request: GameListing) {
+        self.request = request
+    }
+    
+    func applyData(models: [RowModel]) {
+        
+        var snapshot = self.dataSource.snapshot()
+    
+        snapshot.appendSections([.primary])
+        snapshot.appendItems(models, toSection: .primary)
+            
+        self.dataSource.apply(snapshot, animatingDifferences: false)
+    }
+    
+    func hideIndicator() {
+        self.screen?.hideProgressIndicator(title: "Characer List")
+    }
+}
+
+extension RootViewModel: ViewModel {
     func dataSource(tableView: UITableView) -> UITableViewDiffableDataSource<Section, RowModel> {
         dataSource = UITableViewDiffableDataSource<Section, RowModel>(tableView: tableView, cellProvider: { [weak self] (tableView, indexpath, item) -> UITableViewCell? in
                    let cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier, for: indexpath)
@@ -47,25 +73,22 @@ class RootViewModel: ViewModel {
         dataSource.defaultRowAnimation = .none
         return dataSource
     }
-    
+
     func setScreen<T>(screen: T) {
         self._screen = (screen as! RootViewController)
     }
-     
-    init() {}
     
     func loadRemoteData() {
         
         self.screen?.showProgressIndicator()
         
-        var request = GameListingRequests()
-        
         request.fetchSeries()
-            .map {
-                return $0.map {
-                    return RowModel(name: $0.name, series: $0.gameSeries, image: $0.image, cellId: CharacterTableViewCell.self)
-                }
-        }.sink(receiveCompletion: { [weak self] completion in
+        .map {
+            return $0.map {
+                return RowModel(name: $0.name, series: $0.gameSeries, image: $0.image, cellId: CharacterTableViewCell.self)
+            }
+        }
+        .sink(receiveCompletion: { [weak self] completion in
             
             self?.hideIndicator()
             
@@ -78,22 +101,9 @@ class RootViewModel: ViewModel {
         }, receiveValue: { [weak self] models in
             
             self?.hideIndicator()
+            
             self?.applyData(models: models)
         })
         .store(in: &store)
-    }
-    
-    func applyData(models: [RowModel]) {
-        
-        var snapshot = self.dataSource.snapshot()
-    
-        snapshot.appendSections([.primary])
-        snapshot.appendItems(models, toSection: .primary)
-            
-        self.dataSource.apply(snapshot, animatingDifferences: false)
-    }
-    
-    func hideIndicator() {
-        self.screen?.hideProgressIndicator(title: "Characer List")
     }
 }

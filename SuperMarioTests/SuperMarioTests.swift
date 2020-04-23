@@ -19,16 +19,79 @@ class SuperMarioTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testWhenImagePreviewActionCalled_Should_NavigateToImageViewer() {
+        let detailViews = MockDetailNavigation()
+        let rootVC = RootViewController()
+        let _ = rootVC.view
+        rootVC.detailViews = detailViews
+        
+        rootVC.push(to: .render(.characterPreview("")))
+        
+        XCTAssert(detailViews.willNavigateToImagePreview)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testWhenImagePreviewActionCalled_ShouldNot_NavigateToWebView() {
+        let detailViews = MockDetailNavigation()
+        let rootVC = RootViewController()
+        let _ = rootVC.view
+        rootVC.detailViews = detailViews
+        
+        rootVC.push(to: .render(.characterPreview("")))
+        
+        XCTAssert(!detailViews.willNavigateToWebPreview)
     }
+    
+    func testWhenWebViewActionCalled_Should_NavigateToWebView() {
+        let detailViews = MockDetailNavigation()
+        let rootVC = RootViewController()
+        let _ = rootVC.view
+        rootVC.detailViews = detailViews
+        
+        rootVC.push(to: .render(.webSearch("")))
+        
+        XCTAssert(detailViews.willNavigateToWebPreview)
+    }
+    
+    func testWhenWebViewActionCalled_ShouldNot_NavigateToImageViewer() {
+        let detailViews = MockDetailNavigation()
+        let rootVC = RootViewController()
+        let _ = rootVC.view
+        rootVC.detailViews = detailViews
+        
+        rootVC.push(to: .render(.webSearch("")))
+        
+        XCTAssert(!detailViews.willNavigateToImagePreview)
+    }
+    
+    // MARK: RootViewController State
+    
+    func testWhenAPIRequestFails_ShouldBe_NoConnectionState() {
+        
+        let fails = true
+        
+        let rootVC = RootViewController()
+        
+        let fakeRequest = MockRequests()
+        fakeRequest.mockSuccess = !fails
+        let mockVM = RootViewModel(request: fakeRequest )
+        rootVC.viewModel = mockVM
+        let _ = rootVC.view
 
+        XCTAssert(.noConnection("") == rootVC.state)
+    }
+    
+    func testWhenAPIRequestSucceeds_ShouldNOTBe_NoConnectionState() {
+        
+        let fails = false
+        
+        let rootVC = RootViewController()
+        
+        let fakeRequest = MockRequests()
+        fakeRequest.mockSuccess = !fails
+        let mockVM = RootViewModel(request: fakeRequest )
+        rootVC.viewModel = mockVM
+        let _ = rootVC.view
+        
+        XCTAssertFalse(.noConnection("") == rootVC.state)
+    }
 }

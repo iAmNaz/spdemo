@@ -11,10 +11,16 @@ import Foundation
 /**
  The data model representing the series document
  */
-struct Series: Codable {
+public struct Series: Codable {
     var name: String
     var gameSeries: String
     var image: String
+    
+    public init(name: String, gameSeries: String, image: String) {
+        self.name = name
+        self.gameSeries = gameSeries
+        self.image = image
+    }
     
     enum CodingKeys: String, CodingKey {
         case name, gameSeries, image

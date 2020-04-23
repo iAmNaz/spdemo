@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4515731024518F1B00E8BE42 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4515730F24518F1B00E8BE42 /* .swiftlint.yml */; };
+		45157312245198A800E8BE42 /* RootDetailNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45157311245198A800E8BE42 /* RootDetailNavigation.swift */; };
+		4515731424519B9700E8BE42 /* MockDetailNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515731324519B9700E8BE42 /* MockDetailNavigation.swift */; };
+		451573172451AC3F00E8BE42 /* MockRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451573162451AC3F00E8BE42 /* MockRequests.swift */; };
 		454C568A244FE13400BAA651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C5689244FE13400BAA651 /* AppDelegate.swift */; };
 		454C568C244FE13400BAA651 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C568B244FE13400BAA651 /* SceneDelegate.swift */; };
 		454C568E244FE13400BAA651 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C568D244FE13400BAA651 /* RootViewController.swift */; };
@@ -64,6 +67,9 @@
 		1F8C0F07BA593AD5E11B41BD /* Pods-SuperMarioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMarioTests.debug.xcconfig"; path = "Target Support Files/Pods-SuperMarioTests/Pods-SuperMarioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		350C09E120CE665CDC918127 /* Pods_SuperMarioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMarioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4515730F24518F1B00E8BE42 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		45157311245198A800E8BE42 /* RootDetailNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDetailNavigation.swift; sourceTree = "<group>"; };
+		4515731324519B9700E8BE42 /* MockDetailNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailNavigation.swift; sourceTree = "<group>"; };
+		451573162451AC3F00E8BE42 /* MockRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequests.swift; sourceTree = "<group>"; };
 		454C5686244FE13400BAA651 /* SuperMario.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperMario.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		454C5689244FE13400BAA651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		454C568B244FE13400BAA651 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +164,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		451573152451AA7100E8BE42 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				45A79FE12450777C006A5F38 /* ConstraintValues.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		454C567D244FE13400BAA651 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +198,7 @@
 		454C5688244FE13400BAA651 /* SuperMario */ = {
 			isa = PBXGroup;
 			children = (
+				451573152451AA7100E8BE42 /* Utilities */,
 				454C56D2244FF6D200BAA651 /* Networking */,
 				454C56CA244FF3D900BAA651 /* Extensions */,
 				454C56C3244FF20200BAA651 /* Protocols */,
@@ -194,8 +209,6 @@
 				454C5692244FE13500BAA651 /* Assets.xcassets */,
 				454C5694244FE13500BAA651 /* LaunchScreen.storyboard */,
 				454C5697244FE13500BAA651 /* Info.plist */,
-				454C56C6244FF30300BAA651 /* RowModel.swift */,
-				45A79FE12450777C006A5F38 /* ConstraintValues.swift */,
 			);
 			path = SuperMario;
 			sourceTree = "<group>";
@@ -204,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				454C56A0244FE13600BAA651 /* SuperMarioTests.swift */,
+				4515731324519B9700E8BE42 /* MockDetailNavigation.swift */,
+				451573162451AC3F00E8BE42 /* MockRequests.swift */,
 				454C56A2244FE13600BAA651 /* Info.plist */,
 			);
 			path = SuperMarioTests;
@@ -276,6 +291,7 @@
 		454C56CF244FF4A600BAA651 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				454C56C6244FF30300BAA651 /* RowModel.swift */,
 				454C56BF244FE31900BAA651 /* CharacterTableViewCell */,
 			);
 			path = TableViewCells;
@@ -333,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				454C568D244FE13400BAA651 /* RootViewController.swift */,
+				45157311245198A800E8BE42 /* RootDetailNavigation.swift */,
 				454C56D0244FF55D00BAA651 /* RootViewModel.swift */,
 			);
 			path = "Root View ";
@@ -616,6 +633,7 @@
 				454C56E9244FF6D200BAA651 /* APIClient.swift in Sources */,
 				454C56E7244FF6D200BAA651 /* GameListingRequests.swift in Sources */,
 				454C56EA244FF6D200BAA651 /* Resource.swift in Sources */,
+				45157312245198A800E8BE42 /* RootDetailNavigation.swift in Sources */,
 				45A79FDA2450684B006A5F38 /* FullImageViewViewController.swift in Sources */,
 				454C56C5244FF22C00BAA651 /* ViewModel+Protocols.swift in Sources */,
 				454C56F9244FF6D200BAA651 /* EndPoint.swift in Sources */,
@@ -643,7 +661,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4515731424519B9700E8BE42 /* MockDetailNavigation.swift in Sources */,
 				454C56A1244FE13600BAA651 /* SuperMarioTests.swift in Sources */,
+				451573172451AC3F00E8BE42 /* MockRequests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

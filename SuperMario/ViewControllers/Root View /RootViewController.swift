@@ -8,21 +8,11 @@
 
 import UIKit
 
-enum SubSceneDestination {
-    enum SubScene {
-        case characterPreview(String)
-        case webSearch(String)
-    }
-    case none
-    case noConnection(String)
-    case render(SubScene)
-}
-
 class RootViewController: BaseViewController {
     
     typealias DataSource = UITableViewDiffableDataSource<Section, RowModel>
     
-    let viewModel = RootViewModel()
+    var viewModel = RootViewModel()
     
     var state: SubSceneDestination = .none
     
@@ -31,6 +21,8 @@ class RootViewController: BaseViewController {
     var tableView = UITableView(frame: .zero)
     
     var statusLabel = UILabel(frame: .zero)
+    
+    var detailViews: NavigableDetail = RootViewDetailViews()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,17 +108,39 @@ extension RootViewController: Transitionable {
         self.state = newState
         
         if case .render(.characterPreview(let imageUrl)) = self.state {
-            let url = URL(string: imageUrl)
-            let controller = FullImageViewViewController()
-            controller.imageUrl = url
-            
+            let controller = self.detailViews.imageViewer(imageUrl: imageUrl)
             self.navigationController?.pushViewController(controller, animated: true)
         }
         
         if case .render(.webSearch(let key)) = self.state {
-            let controller = SeriesDecriptionViewController()
-            controller.searchKey = key
+            let controller = self.detailViews.webViewer(key: key)
             self.navigationController?.pushViewController(controller, animated: true)
         }
+    }
+}
+
+/// Scene state options
+enum SubSceneDestination {
+    enum SubScene {
+        case characterPreview(String)
+        case webSearch(String)
+    }
+    case none
+    case noConnection(String)
+    case render(SubScene)
+}
+
+func == (lhs: SubSceneDestination, rhs: SubSceneDestination) -> Bool {
+    switch (lhs, rhs) {
+    case (.none, .none):
+        return true
+    case (.noConnection, .noConnection):
+        return true
+    case (.render(.characterPreview), .render(.characterPreview)):
+        return true
+    case (.render(.webSearch), .render(.webSearch)):
+        return true
+    default:
+        return false
     }
 }

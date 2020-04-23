@@ -11,10 +11,13 @@ import Alamofire
 import Combine
 import os
 
+public protocol GameListing {
+    mutating func fetchSeries() -> AnyPublisher<[Series], AFError>
+}
 /**
  A concrete type made specifically for the Series collection
  */
-struct GameListingRequests {
+struct GameListingRequests: GameListing {
 
     /// A get request of all Game Series
     mutating func fetchSeries() -> AnyPublisher<[Series], AFError> {

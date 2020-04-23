@@ -19,4 +19,7 @@ protocol ViewModel {
     /// Method to pass and set a reference to the current view controller
     /// Parameter screen: A reference to a view controller
     func setScreen<T>(screen: T)
+    
+    /// Call to request fetching remote data
+    func loadRemoteData()
 }
