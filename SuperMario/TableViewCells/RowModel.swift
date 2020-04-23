@@ -15,7 +15,7 @@ struct RowModel: ReuseIdentifier {
     /// The id as required by the `UITableViewDiffableDataSource`
     var identifier = UUID().uuidString
     
-    /// Name of the game series
+    /// Name of the series character
     var name: String
     
     /// Series name
@@ -25,7 +25,7 @@ struct RowModel: ReuseIdentifier {
     var image: String
     
     /// Common initializer for this struct
-    /// - Parameter name: The name of the game
+    /// - Parameter name: The name of the character
     /// - Parameter series: The series name
     /// - Parameter image: Series image
     /// - Parameter cellId: Type of the `UITableViewCell`

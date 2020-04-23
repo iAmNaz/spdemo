@@ -12,7 +12,7 @@ import Foundation
  The data model representing the series document
  */
 public struct Series: Codable {
-    /// Series name
+    /// Character name
     var name: String
     
     /// Game series

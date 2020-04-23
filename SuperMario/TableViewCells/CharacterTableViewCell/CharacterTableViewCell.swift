@@ -13,7 +13,7 @@ import Kingfisher
 /// This is the table view cell used to display the thumbnail, name of game and series
 class CharacterTableViewCell: UITableViewCell, NibReusable, Cell {
     
-    /// Displays the name
+    /// Displays the character name
     @IBOutlet weak var nameLabel: UILabel!
     
     /// Displays the series name
