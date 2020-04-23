@@ -48,7 +48,7 @@ extension UITableViewCell {
 
 /// A protocol comformed by viewController classes.
 /// This is the boundary between the view model and the controller
-protocol Transitionable:class {
+protocol Transitionable: class {
     
     /// Typically an enum with different screen states or actions
     associatedtype State
@@ -68,19 +68,16 @@ protocol Transitionable:class {
 }
 
 extension UIViewController {
-    
     func showAlert(title: String, message: String) {
-        
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
             let submitAction = UIAlertAction(title: "OK", style: .default) { _ in
-                
-                ac.dismiss(animated: true, completion: nil)
+                alert.dismiss(animated: true, completion: nil)
             }
-            ac.addAction(submitAction)
+            alert.addAction(submitAction)
         
-        if let vc = self.navigationController?.visibleViewController {
-            vc.present(ac, animated: true)
+        if let controller = self.navigationController?.visibleViewController {
+            controller.present(alert, animated: true)
         }
     }
     
@@ -114,35 +111,43 @@ extension UIViewController {
         var constraints = [NSLayoutConstraint]()
         
         if let right = constraint.right {
-            constraints.append(childView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: right))
+            constraints.append(childView.trailingAnchor
+                .constraint(equalTo: view.trailingAnchor, constant: right))
         }
         
         if let left = constraint.left {
-            constraints.append(childView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: left))
+            constraints.append(childView.leadingAnchor
+                .constraint(equalTo: view.leadingAnchor, constant: left))
         }
         
         if let top = constraint.top {
-            constraints.append(childView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: top))
+            constraints.append(childView.topAnchor
+                .constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: top))
         }
         
         if let bottom = constraint.bottom {
-            constraints.append(childView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: bottom))
+            constraints.append(childView.bottomAnchor
+                .constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: bottom))
         }
         
         if let height = constraint.height {
-            constraints.append(childView.heightAnchor.constraint(equalToConstant: height))
+            constraints.append(childView.heightAnchor
+                .constraint(equalToConstant: height))
         }
         
         if let width = constraint.width {
-            constraints.append(childView.widthAnchor.constraint(equalToConstant: width))
+            constraints.append(childView.widthAnchor
+                .constraint(equalToConstant: width))
         }
         
         if let centerX = constraint.centerX {
-            constraints.append(childView.centerXAnchor.constraint(lessThanOrEqualTo: view.centerXAnchor, constant: centerX))
+            constraints.append(childView.centerXAnchor
+                .constraint(lessThanOrEqualTo: view.centerXAnchor, constant: centerX))
         }
         
         if let centerY = constraint.centerY {
-            constraints.append(childView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: centerY))
+            constraints.append(childView.centerYAnchor
+                .constraint(equalTo: view.centerYAnchor, constant: centerY))
         }
         
         [constraints]

@@ -80,13 +80,13 @@ class RootViewController: BaseViewController {
         self.statusLabel.text = ""
         self.statusLabel.isHidden = true
         self.tableView.isHidden = false
-        viewModel.loadRemote()
+        viewModel.loadRemoteData()
     }
     
     var tapGesture: UITapGestureRecognizer?
     
     /// A method to display the network error / status
-    func offLine(_ message: String) {
+    func updateStatus(_ message: String) {
         self.tableView.isHidden = true
         self.statusLabel.isHidden = false
         self.statusLabel.text = message + "\nTap to retry."
@@ -107,7 +107,7 @@ extension RootViewController: Transitionable {
         self.state = newState
         
         if case .noConnection(let message) = self.state {
-            self.offLine(message)
+            self.updateStatus(message)
         }
     }
     
@@ -117,16 +117,16 @@ extension RootViewController: Transitionable {
         
         if case .render(.characterPreview(let imageUrl)) = self.state {
             let url = URL(string: imageUrl)
-            let vc = FullImageViewViewController()
-            vc.imageUrl = url
+            let controller = FullImageViewViewController()
+            controller.imageUrl = url
             
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(controller, animated: true)
         }
         
         if case .render(.webSearch(let key)) = self.state {
-            let vc = SeriesDecriptionViewController()
-            vc.searchKey = key
-            self.navigationController?.pushViewController(vc, animated: true)
+            let controller = SeriesDecriptionViewController()
+            controller.searchKey = key
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
 }

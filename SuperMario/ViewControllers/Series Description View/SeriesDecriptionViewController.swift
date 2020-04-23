@@ -22,6 +22,8 @@ class SeriesDecriptionViewController: BaseViewController {
     fileprivate var webView = WKWebView(frame: .zero)
     fileprivate var progressView = UIProgressView(progressViewStyle: .default)
     
+    var observer: NSKeyValueObservation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,17 +31,7 @@ class SeriesDecriptionViewController: BaseViewController {
         
         configureViews()
         loadResource()
-    }
-    
-    /// Observe the web view progress
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "estimatedProgress" {
-            let progress = Float(webView.estimatedProgress)
-            progressView.progress = progress
-            if progress >= 1.0 {
-                progressView.isHidden = true
-            }
-        }
+
     }
     
     /// Setup the view
@@ -50,11 +42,11 @@ class SeriesDecriptionViewController: BaseViewController {
         var indicatorConstraintVal = ConstraintValues()
         indicatorConstraintVal.bottom = nil
         
-        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
-        
         progressView.progressTintColor = UIColor(named: "Yellow")
         
-        progressView.progress = 0.5
+        progressView.progress = 0
+        
+        addObserver()
         
         addView(childView: progressView, constraint: indicatorConstraintVal)
     }
@@ -66,5 +58,16 @@ class SeriesDecriptionViewController: BaseViewController {
         let endPoint = Endpoint(base: base, path: "/search", queryItems: [query])
         
         webView.load(URLRequest(url: endPoint.url!))
+    }
+    
+    /// Observe the web view progress
+    fileprivate func addObserver() {
+        observer = webView.observe(\.estimatedProgress, options: [.new]) { [weak self] (_, change)  in
+            let progress = Float(change.newValue!)
+            self?.progressView.progress = progress
+            if progress >= 1.0 {
+                self?.progressView.isHidden = true
+            }
+        }
     }
 }

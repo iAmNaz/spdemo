@@ -32,10 +32,10 @@ public struct Body {
     /// - Parameter route: An enum of predefined parameters
     /// - Parameter extras: For parameters that are generated dynamically depending on the use case.
     init(route: Route, extras: [String: Any]? = nil) {
-        self.data.merge(route.preset())  { (current, _) in current }
+        self.data.merge(route.preset()) { (current, _) in current }
         guard let copy = extras else {
             return
         }
-        data.merge(copy)  { (current, _) in current }
+        data.merge(copy) { (current, _) in current }
     }
 }

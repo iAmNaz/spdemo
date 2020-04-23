@@ -7,6 +7,7 @@ target 'SuperMario' do
   pod 'Alamofire'
   pod 'Reusable'
   pod 'Kingfisher'
+  pod 'SwiftLint'
   # Pods for SuperMario
 
   target 'SuperMarioTests' do

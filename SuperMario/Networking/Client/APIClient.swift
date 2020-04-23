@@ -16,7 +16,7 @@ let apiLog = OSLog(subsystem: "com.naz.SuperMario", category: "api")
 /*
  A generic networking interface
  */
-final class APIClient<T:Decodable> {
+final class APIClient<T: Decodable> {
     
     init() {}
 
@@ -36,10 +36,10 @@ final class APIClient<T:Decodable> {
                         queue: .global(),
                         completionHandler: { (response: DataResponse<T, AFError>) in
                         switch response.result {
-                            case .success(let data):
-                                promise(.success(data))
-                            case .failure(let error):
-                                promise(.failure(error))
+                        case .success(let data):
+                            promise(.success(data))
+                        case .failure(let error):
+                            promise(.failure(error))
                         }
                     })
         }

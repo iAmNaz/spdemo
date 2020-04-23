@@ -51,10 +51,10 @@ class RootViewModel: ViewModel {
     func setScreen<T>(screen: T) {
         self._screen = (screen as! RootViewController)
     }
+     
+    init() {}
     
-    init(){}
-    
-    func loadRemote() {
+    func loadRemoteData() {
         
         self.screen?.showProgressIndicator()
         
@@ -75,19 +75,22 @@ class RootViewModel: ViewModel {
                 
                 self?.screen?.showAlert(title: "Error", message: error.localizedDescription)
             }
-        }) { [weak self] models in
+        }, receiveValue: { [weak self] models in
             
             self?.hideIndicator()
-        
-            guard var snapshot = self?.dataSource.snapshot() else {
-                return
-            }
-            snapshot.appendSections([.primary])
-            snapshot.appendItems(models, toSection: .primary)
-                
-            self?.dataSource.apply(snapshot, animatingDifferences: false)
-        }
+            self?.applyData(models: models)
+        })
         .store(in: &store)
+    }
+    
+    func applyData(models: [RowModel]) {
+        
+        var snapshot = self.dataSource.snapshot()
+    
+        snapshot.appendSections([.primary])
+        snapshot.appendItems(models, toSection: .primary)
+            
+        self.dataSource.apply(snapshot, animatingDifferences: false)
     }
     
     func hideIndicator() {

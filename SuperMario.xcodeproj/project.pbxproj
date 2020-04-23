@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4515731024518F1B00E8BE42 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4515730F24518F1B00E8BE42 /* .swiftlint.yml */; };
 		454C568A244FE13400BAA651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C5689244FE13400BAA651 /* AppDelegate.swift */; };
 		454C568C244FE13400BAA651 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C568B244FE13400BAA651 /* SceneDelegate.swift */; };
 		454C568E244FE13400BAA651 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C568D244FE13400BAA651 /* RootViewController.swift */; };
@@ -62,6 +63,7 @@
 		098FB279F5D1E8E32AB6DFD2 /* Pods-SuperMario.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMario.release.xcconfig"; path = "Target Support Files/Pods-SuperMario/Pods-SuperMario.release.xcconfig"; sourceTree = "<group>"; };
 		1F8C0F07BA593AD5E11B41BD /* Pods-SuperMarioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperMarioTests.debug.xcconfig"; path = "Target Support Files/Pods-SuperMarioTests/Pods-SuperMarioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		350C09E120CE665CDC918127 /* Pods_SuperMarioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperMarioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4515730F24518F1B00E8BE42 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		454C5686244FE13400BAA651 /* SuperMario.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperMario.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		454C5689244FE13400BAA651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		454C568B244FE13400BAA651 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		454C567D244FE13400BAA651 = {
 			isa = PBXGroup;
 			children = (
+				4515730F24518F1B00E8BE42 /* .swiftlint.yml */,
 				454C5688244FE13400BAA651 /* SuperMario */,
 				454C569F244FE13500BAA651 /* SuperMarioTests */,
 				454C56AA244FE13600BAA651 /* SuperMarioUITests */,
@@ -363,6 +366,7 @@
 				454C5683244FE13400BAA651 /* Frameworks */,
 				454C5684244FE13400BAA651 /* Resources */,
 				704B00F3999E40A3606E10C9 /* [CP] Embed Pods Frameworks */,
+				4515730E24518E3700E8BE42 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -460,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4515731024518F1B00E8BE42 /* .swiftlint.yml in Resources */,
 				454C5696244FE13500BAA651 /* LaunchScreen.storyboard in Resources */,
 				454C5693244FE13500BAA651 /* Assets.xcassets in Resources */,
 				454C56BE244FE30D00BAA651 /* CharacterTableViewCell.xib in Resources */,
@@ -521,6 +526,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4515730E24518E3700E8BE42 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		704B00F3999E40A3606E10C9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
