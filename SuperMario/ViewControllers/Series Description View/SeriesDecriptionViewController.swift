@@ -16,13 +16,13 @@ import WebKit
  */
 class SeriesDecriptionViewController: BaseViewController {
     
+    /// Inbound search keyword
     var searchKey: String!
     
     fileprivate let googleQueryURL = "https://www.google.com"
     fileprivate var webView = WKWebView(frame: .zero)
     fileprivate var progressView = UIProgressView(progressViewStyle: .default)
-    
-    var observer: NSKeyValueObservation!
+    fileprivate var observer: NSKeyValueObservation!
     
     override func viewDidLoad() {
         super.viewDidLoad()

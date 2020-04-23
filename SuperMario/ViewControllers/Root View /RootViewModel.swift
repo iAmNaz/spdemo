@@ -15,6 +15,7 @@ enum Section: CaseIterable {
     case secondary
 }
 
+/// The view model made for the `RootViewController`
 class RootViewModel {
     
     fileprivate weak var _screen: RootViewController?
@@ -37,7 +38,7 @@ class RootViewModel {
         self.request = request
     }
     
-    func applyData(models: [RowModel]) {
+    fileprivate func applyData(models: [RowModel]) {
         
         var snapshot = self.dataSource.snapshot()
     
@@ -47,7 +48,7 @@ class RootViewModel {
         self.dataSource.apply(snapshot, animatingDifferences: false)
     }
     
-    func hideIndicator() {
+    fileprivate func hideIndicator() {
         self.screen?.hideProgressIndicator(title: "Characer List")
     }
 }

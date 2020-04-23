@@ -9,8 +9,10 @@
 import UIKit
 import Kingfisher
 
+/// The view controller for the full screen image display
 class FullImageViewViewController: BaseViewController {
     
+    /// Inbound url of the image
     var imageUrl: URL!
     
     fileprivate var imageView = UIImageView(frame: .zero)
@@ -28,7 +30,7 @@ class FullImageViewViewController: BaseViewController {
         loadImage()
     }
     
-    func loadImage() {
+    fileprivate func loadImage() {
         imageView.loadImage(from: imageUrl)
     }
 }

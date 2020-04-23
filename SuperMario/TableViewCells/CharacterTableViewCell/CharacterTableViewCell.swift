@@ -10,15 +10,25 @@ import UIKit
 import Reusable
 import Kingfisher
 
+/// This is the table view cell used to display the thumbnail, name of game and series
 class CharacterTableViewCell: UITableViewCell, NibReusable, Cell {
     
+    /// Displays the name
     @IBOutlet weak var nameLabel: UILabel!
+    
+    /// Displays the series name
     @IBOutlet weak var seriesLabel: UILabel!
+    
+    /// Displays the series image
     @IBOutlet weak var characterImageView: UIImageView!
     
+    /// The block that references the action when the thumbnail is pressed
     var characterPreViewAction: ((RowModel) -> Void)?
+    
+    /// The block that references the action when the information section is pressed
     var webSearchAction: ((RowModel) -> Void)?
     
+    /// The currently assigned view model
     var rowModel: RowModel! {
         didSet {
             self.nameLabel.text = "Name: " + rowModel.name
@@ -35,7 +45,7 @@ class CharacterTableViewCell: UITableViewCell, NibReusable, Cell {
         self.webSearchAction?(rowModel)
     }
     
-    func processImage() {
+    fileprivate func processImage() {
         
         let url = URL(string: self.rowModel.image)!
         

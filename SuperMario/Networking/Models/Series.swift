@@ -12,10 +12,16 @@ import Foundation
  The data model representing the series document
  */
 public struct Series: Codable {
+    /// Series name
     var name: String
+    
+    /// Game series
     var gameSeries: String
+    
+    /// Character image
     var image: String
     
+    /// Provided initializer for convenience
     public init(name: String, gameSeries: String, image: String) {
         self.name = name
         self.gameSeries = gameSeries

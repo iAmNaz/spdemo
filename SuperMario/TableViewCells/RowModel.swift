@@ -8,12 +8,27 @@
 
 import Foundation
 struct RowModel: ReuseIdentifier {
+    
+    /// The cell identifier for the `UITableViewCell`
     var cellIdentifier: String
+    
+    /// The id as required by the `UITableViewDiffableDataSource`
     var identifier = UUID().uuidString
+    
+    /// Name of the game series
     var name: String
+    
+    /// Series name
     var series: String
+    
+    /// Associated image of the series
     var image: String
     
+    /// Common initializer for this struct
+    /// - Parameter name: The name of the game
+    /// - Parameter series: The series name
+    /// - Parameter image: Series image
+    /// - Parameter cellId: Type of the `UITableViewCell`
     init<T>(name: String, series: String, image: String, cellId: T.Type = T.self) {
         self.cellIdentifier = String(describing: cellId)
         self.name = name
@@ -22,6 +37,7 @@ struct RowModel: ReuseIdentifier {
     }
 }
 
+/// Hashable implementation
 extension RowModel: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)

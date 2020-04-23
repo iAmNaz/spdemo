@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// On this controller the game series are displayed as rows of images and
+/// series information.
 class RootViewController: BaseViewController {
     
     typealias DataSource = UITableViewDiffableDataSource<Section, RowModel>
@@ -75,6 +77,8 @@ class RootViewController: BaseViewController {
         viewModel.loadRemoteData()
     }
     
+    /// Gesture applied to the view so the user can interact with it
+    /// when needed to reload the remote data
     var tapGesture: UITapGestureRecognizer?
     
     /// A method to display the network error / status
@@ -92,6 +96,7 @@ class RootViewController: BaseViewController {
     }
 }
 
+/// The implementation of the `Transitionable` protocol
 extension RootViewController: Transitionable {
     
     func display(to newState: SubSceneDestination) {
@@ -121,26 +126,40 @@ extension RootViewController: Transitionable {
 
 /// Scene state options
 enum SubSceneDestination {
+    
+    /// Destination views
     enum SubScene {
+        /// The full screen image view
         case characterPreview(String)
+        
+        /// The web search view
         case webSearch(String)
     }
+    
+    /// Used as a placeholder value
     case none
+    
+    /// The state for network related errors
     case noConnection(String)
+    
+    /// The state to transition to another view state
     case render(SubScene)
 }
 
-func == (lhs: SubSceneDestination, rhs: SubSceneDestination) -> Bool {
-    switch (lhs, rhs) {
-    case (.none, .none):
-        return true
-    case (.noConnection, .noConnection):
-        return true
-    case (.render(.characterPreview), .render(.characterPreview)):
-        return true
-    case (.render(.webSearch), .render(.webSearch)):
-        return true
-    default:
-        return false
+/// Equatable implementation of the `SubSceneDestination` enum
+extension SubSceneDestination: Equatable {
+    static func == (lhs: SubSceneDestination, rhs: SubSceneDestination) -> Bool {
+        switch (lhs, rhs) {
+        case (.none, .none):
+            return true
+        case (.noConnection, .noConnection):
+            return true
+        case (.render(.characterPreview), .render(.characterPreview)):
+            return true
+        case (.render(.webSearch), .render(.webSearch)):
+            return true
+        default:
+            return false
+        }
     }
 }

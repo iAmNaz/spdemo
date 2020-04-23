@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Abstract base view controller class
 class BaseViewController: UIViewController {
 
     override func viewDidLoad() {

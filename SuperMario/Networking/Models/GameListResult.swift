@@ -13,6 +13,7 @@ import Foundation
  */
 struct GameListResult: Codable {
     
+    /// An array of game series
     var series: [Series]
     
     enum CodingKeys: String, CodingKey {

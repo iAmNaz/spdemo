@@ -11,7 +11,11 @@ import Alamofire
 import Combine
 import os
 
+/// This is the protocol for the game listing related requests
 public protocol GameListing {
+    
+    /// A get request of all Game Series
+    /// - Returns: `AnyPublisher<[Series], AFError>`
     mutating func fetchSeries() -> AnyPublisher<[Series], AFError>
 }
 /**
@@ -19,7 +23,6 @@ public protocol GameListing {
  */
 struct GameListingRequests: GameListing {
 
-    /// A get request of all Game Series
     mutating func fetchSeries() -> AnyPublisher<[Series], AFError> {
         let resource = Resource(url: Endpoint.root.url!)
         let client = APIClient<GameListResult>()

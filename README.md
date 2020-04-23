@@ -1,6 +1,6 @@
 # Super Mario Game Series
 
-An app to load all Super Mario game series that display photos and series information. This app was developed using the latest iOS 13.3 SDK and Swift 5.
+An app that loads and dispalys all Super Mario game series that display photos and series information. This app was developed using the latest iOS 13.3 SDK and Swift 5.
 
 ## Getting Started
 

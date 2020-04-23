@@ -8,6 +8,7 @@
 
 import Alamofire
 
+/// An extension to Alamofire's Session
 extension Session {
     /// A custom method to pass the request components
     func request(_ resource: Resource, body: Body, method: HTTPMethod = .get) -> DataRequest {

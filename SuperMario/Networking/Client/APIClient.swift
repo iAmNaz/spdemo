@@ -13,11 +13,12 @@ let apiLog = OSLog(subsystem: "com.naz.SuperMario", category: "api")
     var AFSession = Session()
 #endif
 
-/*
+/**
  A generic networking interface
  */
 final class APIClient<T: Decodable> {
     
+    /// The client initializer
     init() {}
 
     /// A method for fetching data that returns encoded objects

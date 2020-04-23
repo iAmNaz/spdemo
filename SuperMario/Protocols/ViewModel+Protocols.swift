@@ -10,6 +10,7 @@ import UIKit
 import Combine
 import Alamofire
 
+/// View Controller view models conform to this protocol
 protocol ViewModel {
     
     /// The diffable data source of a tableview configured by the view model

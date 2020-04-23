@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Abstract base navigation controller class
 class BaseNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
