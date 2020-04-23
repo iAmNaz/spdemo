@@ -9,12 +9,14 @@
 import UIKit
 
 struct ConstraintValues {
-    var top: CGFloat
-    var left: CGFloat
-    var right: CGFloat
+    var top: CGFloat?
+    var left: CGFloat?
+    var right: CGFloat?
     var bottom: CGFloat?
     var height: CGFloat?
     var width: CGFloat?
+    var centerX: CGFloat?
+    var centerY: CGFloat?
     
     init() {
         self.top = 0
@@ -34,5 +36,17 @@ struct ConstraintValues {
         self.left = left
         self.right = right
         self.bottom = bottom
+    }
+    
+    static func centered(leftMargin: CGFloat, rightMargin: CGFloat) -> ConstraintValues {
+        var val = ConstraintValues()
+        val.top = nil
+        val.bottom = nil
+        val.left = leftMargin
+        val.right = rightMargin
+        val.centerX = 0
+        val.centerY = 0
+        val.height = nil
+        return val
     }
 }

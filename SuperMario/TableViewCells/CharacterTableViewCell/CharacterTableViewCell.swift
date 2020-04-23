@@ -36,6 +36,7 @@ class CharacterTableViewCell: UITableViewCell, NibReusable, Cell {
     }
     
     func processImage() {
+        
         let url = URL(string: self.rowModel.image)!
         
         characterImageView.loadImage(from: url)

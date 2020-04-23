@@ -9,19 +9,23 @@
 import UIKit
 import Combine
 
+// Section id for the table secionts
+enum Section: CaseIterable {
+    case primary
+    case secondary
+}
+
 class RootViewModel: ViewModel {
     
-    weak var _screen: RootViewController?
+    fileprivate weak var _screen: RootViewController?
+
+    fileprivate var store = Set<AnyCancellable>()
     
-    var selectedItemSubject: PassthroughSubject<Selection, Never>?
-    
-    var store = Set<AnyCancellable>()
-    
-    var screen: RootViewController? {
+    fileprivate var screen: RootViewController? {
         return _screen
     }
     
-    var dataSource: UITableViewDiffableDataSource<Section, RowModel>!
+    fileprivate var dataSource: UITableViewDiffableDataSource<Section, RowModel>!
     
     func dataSource(tableView: UITableView) -> UITableViewDiffableDataSource<Section, RowModel> {
         dataSource = UITableViewDiffableDataSource<Section, RowModel>(tableView: tableView, cellProvider: { [weak self] (tableView, indexpath, item) -> UITableViewCell? in
@@ -48,11 +52,10 @@ class RootViewModel: ViewModel {
         self._screen = (screen as! RootViewController)
     }
     
-    init(){
-        
-    }
+    init(){}
     
     func loadRemote() {
+        
         self.screen?.showProgressIndicator()
         
         var request = GameListingRequests()
@@ -67,7 +70,10 @@ class RootViewModel: ViewModel {
             self?.hideIndicator()
             
             if case .failure(let error) = completion {
-                self?.screen?.showAlert(title: "Error", message: error.localizedDescription, completionHandler: nil)
+                
+                self?.screen?.display(to: .noConnection(error.errorDescription!))
+                
+                self?.screen?.showAlert(title: "Error", message: error.localizedDescription)
             }
         }) { [weak self] models in
             

@@ -8,8 +8,11 @@
 
 import UIKit
 
+/// This is just a fancy way of assigning values to the subclass of the
+/// UITableViewCell without indicating the concrete type
 extension UITableViewCell {
     
+    /// The concrete model of the cell
     var model: RowModel {
         get {
             return (self as! Cell).rowModel
@@ -20,6 +23,7 @@ extension UITableViewCell {
         }
     }
     
+    /// The action invoked when the thumbnail is tapped
     var previewAction: ((RowModel) -> Void)? {
         get {
             return (self as! Cell).characterPreViewAction
@@ -30,6 +34,7 @@ extension UITableViewCell {
         }
     }
     
+    /// The action invoked when the information area is tapped
     var searchAction: ((RowModel) -> Void)? {
         get {
             return (self as! Cell).webSearchAction
@@ -41,21 +46,35 @@ extension UITableViewCell {
     }
 }
 
+/// A protocol comformed by viewController classes.
+/// This is the boundary between the view model and the controller
 protocol Transitionable:class {
+    
+    /// Typically an enum with different screen states or actions
     associatedtype State
+    
+    /// Call this for pushing view controllers in the navigation stack
+    /// - Parameter to: To a given state
     func push(to newState: State)
+    
+    /// Call this for displaying other views in the same screen
+    /// - Parameter to: To a given state
     func display(to newState: State)
-    func showAlert(title: String, message: String, completionHandler: ((String?)->Void)?)
-    func dismiss()
+    
+    /// A general purpose alert view
+    /// - Parameter title: Title of the the alert
+    /// - Parameter message: The alert message
+    func showAlert(title: String, message: String)
 }
 
-extension UIViewController {    
-    func showAlert(title: String, message: String, completionHandler: ((String?)->Void)?) {
+extension UIViewController {
+    
+    func showAlert(title: String, message: String) {
         
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
             let submitAction = UIAlertAction(title: "OK", style: .default) { _ in
-                completionHandler?(nil)
+                
                 ac.dismiss(animated: true, completion: nil)
             }
             ac.addAction(submitAction)
@@ -65,25 +84,46 @@ extension UIViewController {
         }
     }
     
+    /// Show a text progress status
     func showProgressIndicator() {
         self.title = "Loading..."
     }
     
+    /// Unset the progress status
     func hideProgressIndicator(title: String) {
         self.title = title
     }
     
+    /// A helper method to add child views and simple constraints
+    /// - Parameter childView: The view to be added as sub view
+    /// - Parameter constratin: A struct containing constraint constant values
     func addView(childView: UIView, constraint: ConstraintValues) {
         
         view.addSubview(childView)
     
         childView.translatesAutoresizingMaskIntoConstraints = false
         
-        var constraints = [
-            childView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: constraint.top),
-            childView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: constraint.right),
-            childView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: constraint.left)
-        ]
+        applyConstraints(forView: childView, constraint: constraint)
+    }
+    
+    /// Helps build and apply the view constraints
+    /// - Parameter forView: The sub view
+    /// - Parameter constraint: The struct with constraint constant values
+    func applyConstraints(forView childView: UIView, constraint: ConstraintValues) {
+        
+        var constraints = [NSLayoutConstraint]()
+        
+        if let right = constraint.right {
+            constraints.append(childView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: right))
+        }
+        
+        if let left = constraint.left {
+            constraints.append(childView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: left))
+        }
+        
+        if let top = constraint.top {
+            constraints.append(childView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: top))
+        }
         
         if let bottom = constraint.bottom {
             constraints.append(childView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: bottom))
@@ -95,6 +135,14 @@ extension UIViewController {
         
         if let width = constraint.width {
             constraints.append(childView.widthAnchor.constraint(equalToConstant: width))
+        }
+        
+        if let centerX = constraint.centerX {
+            constraints.append(childView.centerXAnchor.constraint(lessThanOrEqualTo: view.centerXAnchor, constant: centerX))
+        }
+        
+        if let centerY = constraint.centerY {
+            constraints.append(childView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: centerY))
         }
         
         [constraints]

@@ -26,8 +26,8 @@ final class APIClient<T:Decodable> {
     /// and encode them to a `Codable` data model
     ///  - Parameter resource: The `Resource` object which has the url and http method
     ///  - Parameter body: The `Body`parameters
-    ///  - Returns: A `Future` result of type T or an `APIError`
-    func loadDecodable(_ resource: Resource, body: Body) -> Future<T, APIError> {
+    ///  - Returns: A `Future` result of type T or an `AFError`
+    func loadDecodable(_ resource: Resource, body: Body) -> Future<T, AFError> {
         return Future { promise in
             
             AFSession.request(resource, body: body)
@@ -39,7 +39,7 @@ final class APIClient<T:Decodable> {
                             case .success(let data):
                                 promise(.success(data))
                             case .failure(let error):
-                                promise(.failure(APIError.error(message: error.localizedDescription)))
+                                promise(.failure(error))
                         }
                     })
         }

@@ -14,14 +14,12 @@
 		454C5696244FE13500BAA651 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 454C5694244FE13500BAA651 /* LaunchScreen.storyboard */; };
 		454C56A1244FE13600BAA651 /* SuperMarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56A0244FE13600BAA651 /* SuperMarioTests.swift */; };
 		454C56AC244FE13600BAA651 /* SuperMarioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56AB244FE13600BAA651 /* SuperMarioUITests.swift */; };
-		454C56BA244FE25F00BAA651 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56B9244FE25F00BAA651 /* BaseTableViewController.swift */; };
 		454C56BD244FE30D00BAA651 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56BB244FE30D00BAA651 /* CharacterTableViewCell.swift */; };
 		454C56BE244FE30D00BAA651 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454C56BC244FE30D00BAA651 /* CharacterTableViewCell.xib */; };
 		454C56C5244FF22C00BAA651 /* ViewModel+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56C4244FF22C00BAA651 /* ViewModel+Protocols.swift */; };
 		454C56C7244FF30300BAA651 /* RowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56C6244FF30300BAA651 /* RowModel.swift */; };
 		454C56C9244FF32E00BAA651 /* UIKit+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56C8244FF32E00BAA651 /* UIKit+Protocols.swift */; };
 		454C56CC244FF3E700BAA651 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56CB244FF3E700BAA651 /* UIKit+Extensions.swift */; };
-		454C56CE244FF43500BAA651 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56CD244FF43500BAA651 /* BaseTableViewCell.swift */; };
 		454C56D1244FF55D00BAA651 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56D0244FF55D00BAA651 /* RootViewModel.swift */; };
 		454C56E7244FF6D200BAA651 /* GameListingRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56D3244FF6D200BAA651 /* GameListingRequests.swift */; };
 		454C56E9244FF6D200BAA651 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56D5244FF6D200BAA651 /* APIClient.swift */; };
@@ -31,7 +29,6 @@
 		454C56F9244FF6D200BAA651 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56E6244FF6D200BAA651 /* EndPoint.swift */; };
 		454C56FD244FF93B00BAA651 /* GameListResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56FC244FF93B00BAA651 /* GameListResult.swift */; };
 		454C56FF244FF9FD00BAA651 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C56FE244FF9FD00BAA651 /* Config.swift */; };
-		454C5701244FFB5000BAA651 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C5700244FFB5000BAA651 /* Foundation+Extensions.swift */; };
 		454C57032450092C00BAA651 /* Alamofire+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C57022450092C00BAA651 /* Alamofire+Extensions.swift */; };
 		454C570524500A9300BAA651 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C570424500A9300BAA651 /* Series.swift */; };
 		45A79FDA2450684B006A5F38 /* FullImageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A79FD92450684B006A5F38 /* FullImageViewViewController.swift */; };
@@ -78,14 +75,12 @@
 		454C56A7244FE13600BAA651 /* SuperMarioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperMarioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454C56AB244FE13600BAA651 /* SuperMarioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperMarioUITests.swift; sourceTree = "<group>"; };
 		454C56AD244FE13600BAA651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		454C56B9244FE25F00BAA651 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		454C56BB244FE30D00BAA651 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		454C56BC244FE30D00BAA651 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		454C56C4244FF22C00BAA651 /* ViewModel+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Protocols.swift"; sourceTree = "<group>"; };
 		454C56C6244FF30300BAA651 /* RowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowModel.swift; sourceTree = "<group>"; };
 		454C56C8244FF32E00BAA651 /* UIKit+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Protocols.swift"; sourceTree = "<group>"; };
 		454C56CB244FF3E700BAA651 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
-		454C56CD244FF43500BAA651 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		454C56D0244FF55D00BAA651 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		454C56D3244FF6D200BAA651 /* GameListingRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListingRequests.swift; sourceTree = "<group>"; };
 		454C56D5244FF6D200BAA651 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -95,7 +90,6 @@
 		454C56E6244FF6D200BAA651 /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		454C56FC244FF93B00BAA651 /* GameListResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListResult.swift; sourceTree = "<group>"; };
 		454C56FE244FF9FD00BAA651 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		454C5700244FFB5000BAA651 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		454C57022450092C00BAA651 /* Alamofire+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alamofire+Extensions.swift"; sourceTree = "<group>"; };
 		454C570424500A9300BAA651 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 		45A79FD92450684B006A5F38 /* FullImageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewViewController.swift; sourceTree = "<group>"; };
@@ -233,7 +227,6 @@
 		454C56C0244FE32100BAA651 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
-				454C56B9244FE25F00BAA651 /* BaseTableViewController.swift */,
 				45A79FE324507E6B006A5F38 /* BaseNavigationViewController.swift */,
 				45A79FDD245068EE006A5F38 /* BaseViewController.swift */,
 			);
@@ -273,7 +266,6 @@
 			children = (
 				454C56CB244FF3E700BAA651 /* UIKit+Extensions.swift */,
 				454C57022450092C00BAA651 /* Alamofire+Extensions.swift */,
-				454C5700244FFB5000BAA651 /* Foundation+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				454C56BF244FE31900BAA651 /* CharacterTableViewCell */,
-				454C56CD244FF43500BAA651 /* BaseTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -603,7 +594,6 @@
 				454C56E9244FF6D200BAA651 /* APIClient.swift in Sources */,
 				454C56E7244FF6D200BAA651 /* GameListingRequests.swift in Sources */,
 				454C56EA244FF6D200BAA651 /* Resource.swift in Sources */,
-				454C56BA244FE25F00BAA651 /* BaseTableViewController.swift in Sources */,
 				45A79FDA2450684B006A5F38 /* FullImageViewViewController.swift in Sources */,
 				454C56C5244FF22C00BAA651 /* ViewModel+Protocols.swift in Sources */,
 				454C56F9244FF6D200BAA651 /* EndPoint.swift in Sources */,
@@ -614,7 +604,6 @@
 				45A79FDE245068EE006A5F38 /* BaseViewController.swift in Sources */,
 				454C570524500A9300BAA651 /* Series.swift in Sources */,
 				454C56FD244FF93B00BAA651 /* GameListResult.swift in Sources */,
-				454C5701244FFB5000BAA651 /* Foundation+Extensions.swift in Sources */,
 				45A79FDC24506874006A5F38 /* SeriesDecriptionViewController.swift in Sources */,
 				454C57032450092C00BAA651 /* Alamofire+Extensions.swift in Sources */,
 				45A79FE424507E6B006A5F38 /* BaseNavigationViewController.swift in Sources */,
@@ -624,7 +613,6 @@
 				45A79FE22450777C006A5F38 /* ConstraintValues.swift in Sources */,
 				454C56EC244FF6D200BAA651 /* APILogger.swift in Sources */,
 				454C56D1244FF55D00BAA651 /* RootViewModel.swift in Sources */,
-				454C56CE244FF43500BAA651 /* BaseTableViewCell.swift in Sources */,
 				454C568C244FE13400BAA651 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,11 @@
 import UIKit
 import WebKit
 
+/**
+ On this screen the web view is initialized with the google search url.
+ When the url is loaded a progress indicator is displayed to indicate the
+ current progress of loading the url.
+ */
 class SeriesDecriptionViewController: BaseViewController {
     
     var searchKey: String!
@@ -26,6 +31,7 @@ class SeriesDecriptionViewController: BaseViewController {
         loadResource()
     }
     
+    /// Observe the web view progress
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
             let progress = Float(webView.estimatedProgress)
@@ -36,7 +42,9 @@ class SeriesDecriptionViewController: BaseViewController {
         }
     }
     
-    func configureViews() {
+    /// Setup the view
+    fileprivate func configureViews() {
+        
         addView(childView: webView, constraint: ConstraintValues())
         
         var indicatorConstraintVal = ConstraintValues()
@@ -45,11 +53,14 @@ class SeriesDecriptionViewController: BaseViewController {
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
         progressView.progressTintColor = UIColor(named: "Yellow")
+        
         progressView.progress = 0.5
+        
         addView(childView: progressView, constraint: indicatorConstraintVal)
     }
     
-    func loadResource() {
+    /// A method to load a google search on a webview
+    fileprivate func loadResource() {
         let base = URL(string: googleQueryURL)!
         let query = URLQueryItem(name: "q", value: searchKey)
         let endPoint = Endpoint(base: base, path: "/search", queryItems: [query])

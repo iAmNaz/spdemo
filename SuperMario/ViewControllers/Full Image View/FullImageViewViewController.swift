@@ -11,8 +11,9 @@ import Kingfisher
 
 class FullImageViewViewController: BaseViewController {
     
-    fileprivate var imageView = UIImageView(frame: .zero)
     var imageUrl: URL!
+    
+    fileprivate var imageView = UIImageView(frame: .zero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,22 +30,5 @@ class FullImageViewViewController: BaseViewController {
     
     func loadImage() {
         imageView.loadImage(from: imageUrl)
-    }
-
-    func setupImageView() {
-        
-        view.addSubview(imageView)
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let constraints = [
-            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
-        ]
-        
-        [constraints]
-        .forEach(NSLayoutConstraint.activate(_:))
     }
 }

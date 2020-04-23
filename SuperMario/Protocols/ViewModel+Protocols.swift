@@ -10,18 +10,13 @@ import UIKit
 import Combine
 import Alamofire
 
-enum ActionType {
-    case character
-    case search
-}
-
-struct Selection {
-    var actionType: ActionType
-    var indexPath: IndexPath
-}
-
 protocol ViewModel {
-    var selectedItemSubject: PassthroughSubject<Selection, Never>? { get set }
+    
+    /// The diffable data source of a tableview configured by the view model
+    /// - Parameter tableView: Pass a reference of the table view
     func dataSource(tableView: UITableView) -> UITableViewDiffableDataSource<Section, RowModel>
+    
+    /// Method to pass and set a reference to the current view controller
+    /// Parameter screen: A reference to a view controller
     func setScreen<T>(screen: T)
 }

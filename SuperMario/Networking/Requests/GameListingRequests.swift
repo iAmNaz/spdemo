@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 import Combine
 import os
 
@@ -16,7 +17,7 @@ import os
 struct GameListingRequests {
 
     /// A get request of all Game Series
-    mutating func fetchSeries() -> AnyPublisher<[Series], APIError> {
+    mutating func fetchSeries() -> AnyPublisher<[Series], AFError> {
         let resource = Resource(url: Endpoint.root.url!)
         let client = APIClient<GameListResult>()
         
@@ -27,6 +28,4 @@ struct GameListingRequests {
             .map { return $0.series }
             .eraseToAnyPublisher()
     }
-    
-    
 }
