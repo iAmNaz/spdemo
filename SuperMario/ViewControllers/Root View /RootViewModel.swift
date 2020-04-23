@@ -9,9 +9,12 @@
 import UIKit
 import Combine
 
-// Section id for the table secionts
+/// Section id for the table secionts
 enum Section: CaseIterable {
+    /// Refers to the first section
     case primary
+    
+    /// Refers to the second section
     case secondary
 }
 

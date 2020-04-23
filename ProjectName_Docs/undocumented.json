@@ -1,0 +1,334 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/BaseClasses/BaseNavigationViewController.swift",
+      "line": 14,
+      "symbol": "BaseNavigationViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/BaseClasses/BaseNavigationViewController.swift",
+      "line": 17,
+      "symbol": "BaseNavigationViewController.preferredStatusBarStyle",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/BaseClasses/BaseViewController.swift",
+      "line": 14,
+      "symbol": "BaseViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Extensions/UIKit+Extensions.swift",
+      "line": 72,
+      "symbol": "UIViewController.showAlert(title:message:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Client/APIClient.swift",
+      "line": 11,
+      "symbol": "AFSession",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Components/Body.swift",
+      "line": 18,
+      "symbol": "Body.Route.getSeries",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Components/Body.swift",
+      "line": 20,
+      "symbol": "Body.Route.preset()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Components/Body.swift",
+      "line": 28,
+      "symbol": "Body.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Components/EndPoint.swift",
+      "line": 32,
+      "symbol": "Endpoint.root",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Components/EndPoint.swift",
+      "line": 45,
+      "symbol": "Endpoint.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Models/GameListResult.swift",
+      "line": 19,
+      "symbol": "GameListResult.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Models/GameListResult.swift",
+      "line": 20,
+      "symbol": "GameListResult.CodingKeys.series",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Models/Series.swift",
+      "line": 31,
+      "symbol": "Series.CodingKeys",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Models/Series.swift",
+      "line": 32,
+      "symbol": "Series.CodingKeys.gameSeries",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Models/Series.swift",
+      "line": 32,
+      "symbol": "Series.CodingKeys.image",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Networking/Models/Series.swift",
+      "line": 32,
+      "symbol": "Series.CodingKeys.name",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/TableViewCells/CharacterTableViewCell/CharacterTableViewCell.swift",
+      "line": 40,
+      "symbol": "CharacterTableViewCell.characterButtonAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/TableViewCells/CharacterTableViewCell/CharacterTableViewCell.swift",
+      "line": 44,
+      "symbol": "CharacterTableViewCell.searchButtonAction(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/TableViewCells/CharacterTableViewCell/CharacterTableViewCell.swift",
+      "line": 55,
+      "symbol": "CharacterTableViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/TableViewCells/CharacterTableViewCell/CharacterTableViewCell.swift",
+      "line": 60,
+      "symbol": "CharacterTableViewCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/TableViewCells/RowModel.swift",
+      "line": 10,
+      "symbol": "RowModel",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/TableViewCells/RowModel.swift",
+      "line": 41,
+      "symbol": "RowModel",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 11,
+      "symbol": "ConstraintValues",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 12,
+      "symbol": "ConstraintValues.top",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 13,
+      "symbol": "ConstraintValues.left",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 14,
+      "symbol": "ConstraintValues.right",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 15,
+      "symbol": "ConstraintValues.bottom",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 16,
+      "symbol": "ConstraintValues.height",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 17,
+      "symbol": "ConstraintValues.width",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 18,
+      "symbol": "ConstraintValues.centerX",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 19,
+      "symbol": "ConstraintValues.centerY",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 21,
+      "symbol": "ConstraintValues.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 28,
+      "symbol": "ConstraintValues.init(top:left:right:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 34,
+      "symbol": "ConstraintValues.init(top:left:right:bottom:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/Utilities/ConstraintValues.swift",
+      "line": 41,
+      "symbol": "ConstraintValues.centered(leftMargin:rightMargin:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Full Image View/FullImageViewViewController.swift",
+      "line": 20,
+      "symbol": "FullImageViewViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Root View /RootViewController.swift",
+      "line": 15,
+      "symbol": "RootViewController.DataSource",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Root View /RootViewController.swift",
+      "line": 17,
+      "symbol": "RootViewController.viewModel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Root View /RootViewController.swift",
+      "line": 19,
+      "symbol": "RootViewController.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Root View /RootViewController.swift",
+      "line": 21,
+      "symbol": "RootViewController.dataSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Root View /RootViewController.swift",
+      "line": 23,
+      "symbol": "RootViewController.tableView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Root View /RootViewController.swift",
+      "line": 25,
+      "symbol": "RootViewController.statusLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Root View /RootViewController.swift",
+      "line": 27,
+      "symbol": "RootViewController.detailViews",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Root View /RootViewController.swift",
+      "line": 29,
+      "symbol": "RootViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Root View /RootViewModel.swift",
+      "line": 36,
+      "symbol": "RootViewModel.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Root View /RootViewModel.swift",
+      "line": 40,
+      "symbol": "RootViewModel.init(request:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario/SuperMario/ViewControllers/Series Description View/SeriesDecriptionViewController.swift",
+      "line": 27,
+      "symbol": "SeriesDecriptionViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/nazariomariano/Repos/Practical Tests/cafe24/SuperMario"
+}

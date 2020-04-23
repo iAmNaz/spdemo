@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// This protocol is implemented by types that are used a data models of tableviewcells
+/// This protocol is implemented by types that are used as data models of tableviewcells
 protocol ReuseIdentifier {
     
     /// The reusable identifier of a cell

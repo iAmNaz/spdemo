@@ -47,7 +47,8 @@ extension UITableViewCell {
 }
 
 /// A protocol comformed by viewController classes.
-/// This is the boundary between the view model and the controller
+/// This is the boundary between the view model and the controller for
+/// view state changes or navigation
 protocol Transitionable: class {
     
     /// Typically an enum with different screen states or actions
